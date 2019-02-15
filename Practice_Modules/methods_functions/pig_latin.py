@@ -11,3 +11,6 @@ def pig_latin(word):
 
 word = pig_latin('apple')
 print(word)
+
+stuff = pig_latin('stuff')
+print(stuff)

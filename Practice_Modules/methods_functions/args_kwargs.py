@@ -1,23 +1,27 @@
-# def myfunc(*args):
-#     return sum(args) * 2
+#The use of '*args' allows us to set an arbitrary amount of arguments and returns a tuple.
 
-# double = myfunc(1,2,3,4,5,6,7,8,9,10)
+def myfunc(*args):
+    return sum(args) * 2
 
-# print(double)
+double = myfunc(1,2,3,4,5,6,7,8,9,10)
+
+print(double)
 
 
-
-# def afunc (**kwargs):
-#     if 'fruit' in kwargs:
-#         print("My favorite fruit is {}".format(kwargs['fruit']))
-#     else:
-#         print("I did not find any fruit")
+# '**kwargs' does the same thing as *args except instead of return the arguments in a tuple, they are returned as a dictionary
+def afunc (**kwargs):
+    if 'fruit' in kwargs:
+        print("My favorite fruit is {}".format(kwargs['fruit']))
+    else:
+        print("I did not find any fruit")
     
-#     print(kwargs)
+    print(kwargs)
 
+print("Thank u next", afunc(fruit='apple', veggie='lettuce'))
 
 # my_stuff = afunc(fruit='apple', veggie='lettuce')
 
+# We can use '*args' and '**kwargs' in combination by passing both of them to the function in the beginning.
 def bfunc(*args, **kwargs):
     print(args)
     print(kwargs)

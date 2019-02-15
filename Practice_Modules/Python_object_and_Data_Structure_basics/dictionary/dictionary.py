@@ -22,7 +22,13 @@ print(d['k2'][2])
 
 #change value of k1 to "New Value"
 d['k1'] = 'New Value'
-
 print(d)
 
+#Print only the keys of the values
+print(d.keys())
 
+#Print only the values of the values
+print(d.values())
+
+#print the keys and values
+print(d.items())

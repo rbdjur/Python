@@ -1,7 +1,7 @@
 my_dogs = 2
 
 my_dogs = ["Sammyy", "Frankie"]
-
+#Above is an example of dynamic typing that allows user to assign different data type
 a = 5
 print(a)
 
