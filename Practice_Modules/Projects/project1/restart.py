@@ -49,7 +49,6 @@ def input_mark_num(filled_board, num, mark):
 
     # num = input("Now Player one,please choose a location (1-9) on the number pad:")
 
-    num = input("Now Player one,please choose a location (1-9) on the number pad:")
 
     # print("The type of num is",  type(num))
 
@@ -57,36 +56,41 @@ def input_mark_num(filled_board, num, mark):
 
     # act_num = int(num)
 
+    num = input("Now Player one,please choose a location (1-9) on the number pad:")
+
     print("This is num before the loop", num)
 
     # while(type(num) == type("l")):
     if(type(num) == type("l")):
-        print("This is a letter, not a number")
-        while (type(num)):
+
+        while (type(num) != type(1)):
+            print("This is a letter. Not a valid response")
             num = input("Please enter a number:")
+
             for char in filled_board:
-                if (num == char):
-                    print("This is num inside the for loop of filled_board", num)
-                    print("This is a character in filled_board", char)
-                    int_num = int(num)
-                    print(f"The user entered {int_num} of type {type(int_num)}") 
-                    break
+                if(num == char):
+                    print("The user entered a string that is in filled_board")
 
-            # if (num == char):
-            #     print("Theres a match")
-            #     print("num should be a str", type(num))
-            #     num = int(num)
-            #     print("After match, type of str_num = int", type(num))
-            # break
-   
-    # while (type(num) != type(1)):
-    #     print("This is not a valid answer")
-    #     str_num = input("Please Enter a number 1 through 9:")
+                    this_num = int(num)
 
-    #     print("This is str_num", str_num)
-    #     print("This is type of str_num", type(str_num))
+                    print(f"the match is {this_num} and the type is {type(this_num)}")
+
+                    # return this_num
             
-    # print("FREE", str_num)
+        
+    if(type(num) != type(1)):
+        for char in filled_board:
+            if (num == char):
+                print("This is num inside the for loop of filled_board", num)
+
+                print("This is a character in filled_board", char)
+
+                int_num = int(num)
+
+                print(f"The user entered {int_num} of type {type(int_num)}")
+                
+                print("After match, type of str_num = int", type(int_num))
+                break
 
     integer_num = int(num)
 
@@ -118,98 +122,7 @@ def input_mark_num(filled_board, num, mark):
     print("player one character is:", player1_mark)
     print("Player two character is:", player2_mark)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # while (mark != "0" and mark != "X"):
-        # mark_and_num = input("Hello Player one, please choose a location (1-9) and symbol (X or O) separated by a space:").split()
-
-        # mark = input("Now, chose a  symbol (X or O):")
-
-        # print("This is mark_and_num[0]", mark_and_num[0])
-        # print("This is mark_and_num[1]", mark_and_num[1])
-
-        # print("This is num", num)
-        # print("This is mark", mark)
-
-        # player1 = mark_and_num[1]
-        # player1_mark = mark
-
-        # if (player1_mark != "O" or player1_mark != "X"):
-        #     print("That is not a valid answer. Try again")
-
-
-    # player1 = mark_and_num[1]
-   
-
-       #Ask for user input
-    # while (player1 != "X" and player1 != "O"):
-    #     print("That is not a valid character selection. Please select 'O' or 'X'.")
-        
-        # if(player1 == "X"):
-        #     player2 = "O"
-        # else:
-        #     player2 = "X"
-    
-    # print(f"Player one is {player1} and player two is {player2}")
-
-    # #This line may cause bug issues. May need to comment this out
-    # player1 = mark_and_num[1]
-
-    # print(mark_and_num)
-    # print("location", mark_and_num[0])
-    # print("character", mark_and_num[1])
-    # print("player one character is:", player1_)
-    # print("Player two character is:", player2)
-
-
-
-
-    # if (player1 == "X"):
-    #     #line above, may need to replace player1 with mark_and_num[1]
-    #     player2 = "O"
-    # else:
-    #     player2 = "X"
-
-
-    # print(f"Player one is {player1} and player two is {player2}")
-    
-    #Put characters inside the list, character_list
-    # character_list.append(player1)
-    # character_list.append(player2)
-
-    #Put the number inside location
-    # location_list = mark_and_num[0]
-    # location_list = num
-    #may need to create a location list for user one and user two.
-   
-    # print_board(filled_board)
-
-    # return(filled_board, location_list, player1, player2, character_list)
-
-    # return(filled_board, location_list, player1, player2, character_list)
-    return (mark, num, player1_mark, player2_mark)
+    return (mark, num, this_num, player1_mark, player2_mark)
 
 def change_marker(filled_board, l):
 # def change_marker(filled_board, l):
