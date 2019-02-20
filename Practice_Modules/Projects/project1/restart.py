@@ -1,3 +1,5 @@
+import string
+
 filled_board = ['#','1','2','3','4','5','6','7','8','9']
 # filled_board = [0,1,2,3,4,5,6,7,8,9]
 
@@ -30,31 +32,161 @@ def input_mark_num(filled_board, num, mark):
 
     # while (mark_and_num != "0" and mark_and_num != "X"):
 
+    mark = input("Hello, player one chose a  symbol (X or O):")
 
-    while (mark != "O" and mark != "X"):
-        mark = input("Hello, player one chose a  symbol (X or O):")
-
-        if (mark != "O" and mark != "X"):
+    if (mark != "O" and mark != "X"):
+        while (mark != "O" and mark != "X"):
+        # mark = input("Hello, player one chose a  symbol (X or O):")
+        # if (mark != "O" and mark != "X"):
             print("That is not a valid answer. Try again")
+            mark = input("Please enter a valid response. O or X:")
+            # mark = input("Hello, player one chose a  symbol (X or O):")
+            # print("That is not a valid answer. Try again")
 
-    # while(num > 9):
-        num = int(input("Now Player one,please choose a location (1-9) on the number pad:"))
+    # print("Here is lowercase letters", string.ascii_lowercase)
 
-        print("This is the location of player one", num)
-        print("THIS IS IMPORTANT", type(num))
 
-        if (num > 9):
-            print("Number is not on the number pad. Please try again")
-            while(num > 9):
+
+    # num = input("Now Player one,please choose a location (1-9) on the number pad:")
+
+    num = input("Now Player one,please choose a location (1-9) on the number pad:")
+
+    print("The type of num is",  type(num))
+
+    print("This is the type of 1", type(1))
+
+    if (type(num) == type(1)):
+        print("This is a valid response")
+    else:
+        print("This is not a valid type of answer. This needs to be a number")
+
+    print(f"Your choice of {num} is not a number")
+
+    # while (type(num) == type(string.ascii_lowercase)):
+    # while (type(num) != type(1)):
+    while (type(num) != type(1)):
+        print("This is not a valid answer")
+        # print(f"Your choice of {num} is not a number")
+        # str_num = input("Please Enter a number")
+        # str_num = int(input("Please Enter a number 1 through 9"))
+        str_num = input("Please Enter a number 1 through 9:")
+
+        print("This is str_num", str_num)
+        print("This is type of str_num", type(str_num))
+
+        # if (int(str_num) == type(1)):
+        #     print("This is a number")
+        #     break
+        # print(f"This is the number version of str_num, {str_num} {type(str_num)}")
+
+        for char in filled_board:
+            print("This is a character in filled_board", char)
+            if (str_num == char):
+                print("Theres a match")
+                print("str_num should be a str", type(str_num))
+                str_num = int(str_num)
+                print("After match, type of str_num = int", type(str_num))
+                break
+            
+    print("FREE", str_num)
+
+        # if (type(str_num) == type(1)):
+        #     print("This is a not a number")
+        #     str_num = input("Enter a number: ")
+
+            # for char in filled_board:
+            #     if (str_num == char):
+            #         print("Theres a match")
+
+
+        #     break
+        # print(f"This is the number version of str_num, {str_num} {type(str_num)}")
+
+
+
+        # if (int(str_num) != type(num)):
+        #     print("This is not")
+
+
+
+    integer_num = int(num)
+
+    # print("This is the type for integer_num", type(integer_num))
+
+    # print("This is the value of intger_num", integer_num)
+
+    if (integer_num < 9):
+        print("Valid response")
+        print("integer_num is:", integer_num)
+    else:
+        print("Not within range")
+
+    while (integer_num > 9):
+        print(f"Your choice of {integer_num} is invalid")
+        print("Enter a valid number on the number pad that is 1 through 9")
+        num = int(input("Your new selection is:"))
+        if (num < 9):
+            print(f"Your choice of {num} is a valid answer")
+            break
+
+    
+    # if(integer_num > 9):
+    #     print("Number is too big.")
+    #     num = int(input("Please enter a number on the number pad (1 through 9):"))
+
+        # while(num > 9):
+        #     print("Number is still too big")
+        # else:
+        #     print("Number is wihtin range")
+
+    # else:
+    #     print("Number is within range")
+        #     num = int(input("Enter a valid number (1-9)"))
+        # if (num< 9):
+        #     print("Thats a valid answer")
+        #     exit
+
+
+
+
+
+
+        # while (integer_num > 9):
+            
+        #     print("This is the new num:", num)
+        #     print("This is the type of new num", type(num))
+    # else:
+    #     print("Number is within range")
+
+
+    # elif (integer_num < 9):
+    #         print("Valid answer of:", num)
+
+        # while (type(num) == type(string.ascii_letters)):
+        #     print("Invalid option.  This is a letter not a number")
+        #     num = int(input("Please enter a number 1 - 9)"))
+
+    
+
+
+
+
+
+
+
+    # num = int(input("Now Player one,please choose a location (1-9) on the number pad:"))
+
+    # print("This is the location of player one", num)
+    # print("THIS IS IMPORTANT", type(num))
+
+    # if (num > 9):
+        # print("Inside the num > 9 or num == string.ascii_letters")
+        # while(num > 9):
+        #     print("Please try again")
                 # num = int(input("Now Player one,please choose a location (1-9) on the number pad:"))
-                num = int(input("please choose a location (1-9) on the number pad:"))
-                
+            # num = int(input("please choose a location (1-9) on the number pad:"))
 
-        # for i in range(1,10):
-        # for i in filled_board[num]:
-            # print("LOOK", i)
-        # if (num != filled_board[num]):
-        #         print("OOR")
+            
 
 
 
