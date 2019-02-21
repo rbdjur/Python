@@ -22,16 +22,9 @@ def print_board(board_list):
     print(f" " + board_list[4] + " " + '|' + " " + board_list[5] + " " + '|' + " " + board_list[6])
     print(f" " + board_list[1] + " " + '|' + " " + board_list[2] + " " + '|' + " " + board_list[3])
 
-# def input_mark_num(filled_list, mark, num, player1_mark, player2_mark):
-def input_mark_num(filled_board, num, mark):
-    # print("Hello Player one, please choose a location (1-9) and symbol (X or O) separated by a space: ")
-    # #Ask for user input
-    # mark_and_num = input("").split()
-
-    # mark_and_num = input("Hello Player one, please choose a location (1-9) and symbol (X or O) separated by a space:").split()
-
-    # while (mark_and_num != "0" and mark_and_num != "X"):
-
+def input_mark_num(filled_list, mark, num, this_num, player1_mark, player2_mark):
+# def input_mark_num(filled_board, num, mark, this_diff_num):
+   
     mark = input("Hello, player one chose a  symbol (X or O):")
 
     if (mark != "O" and mark != "X"):
@@ -43,23 +36,10 @@ def input_mark_num(filled_board, num, mark):
             # mark = input("Hello, player one chose a  symbol (X or O):")
             # print("That is not a valid answer. Try again")
 
-    # print("Here is lowercase letters", string.ascii_lowercase)
-
-
-
-    # num = input("Now Player one,please choose a location (1-9) on the number pad:")
-
-
-    # print("The type of num is",  type(num))
-
-    # print("This is the type of 1", type(1))
-
-    # act_num = int(num)
 
     num = input("Now Player one,please choose a location (1-9) on the number pad:")
 
     print("This is num before the loop", num)
-
 
     # if(type(this_num) == type("l")):
     # if(type(num) == type("l")):
@@ -73,42 +53,34 @@ def input_mark_num(filled_board, num, mark):
             break
         else:
             print("Redirect")
-        
-    # for char in filled_board:
-        # elif (num != char):
-        #     # while(num != char):
-        #     diff_num = input("Please enter a valid response: ")
-        #         #may need to change above to a different variable name
-        #     while(diff_num != char):
-        #         if (diff_num == char):
-        #             print("We are getting somewhere")
+    
+    if(num != char):
+        # while(num != char):
+        diff_num = input("Enter a number, PLEASE PLEASE PLEASE:")
+        for char in filled_board:
+            if(diff_num == char):
+                print("WE ARE GETTING SOMEWHERE")
+                # this_diff_num = int(diff_num)
+                num = int(diff_num)
+                # print(f"this_diff_num is {this_diff_num} and type {type(this_diff_num)}")
+                print(f"this_diff_num is {num} and type {type(num)}")
+                break
 
 
-
-                # if (num != char):
-                #     while(num != char):
-                #         print("What the user entered is not in the list")
-                #         another = input("Please PLEASE PLEASE enter a number (1-9): ")
-
-                #         if (another == char):
-                #             print("Correct answer")
-                #             break
-                
+        if(diff_num != char):
+            another_attempt = input("cmon fam, enter a number:")
+            for char in filled_board:
+                while (another_attempt != char):
+                    keep_trying = input("Keep trying:")
+                    for char in filled_board:
+                        if(keep_trying == char):
+                            print("Oh its a match match")
+                            keep_trying = int(keep_trying)
+                            print(f"despite being not a match {keep_trying} is now a match and the type should be an int likeso {type(keep_trying)}")
+                            return keep_trying
 
     
-        # print("This is this_num", this_num)
 
-
-            
-
-
-        # while (type(this_num) != type(1)):
-            # while (type(num) != type(1)):
-            #     print("This is a letter. Not a valid response")
-            #     num = input("Please enter a number:")
-
-
-    # if (type())
     integer_num = int(num)
 
     if (integer_num < 9):
@@ -128,6 +100,8 @@ def input_mark_num(filled_board, num, mark):
     
     print("This is num", num)
     print("This is mark", mark)
+    # print("This_diff_num is", this_diff_num)
+    # print("Need_that", need_that)
 
     player1_mark = mark
 
@@ -139,6 +113,9 @@ def input_mark_num(filled_board, num, mark):
     print("player one character is:", player1_mark)
     print("Player two character is:", player2_mark)
 
+    # return (mark, num, this_num, this_diff_num, player1_mark, player2_mark)
+
+    # return (mark, num, this_num, this_diff_num, player1_mark, player2_mark)
     return (mark, num, this_num, player1_mark, player2_mark)
 
 def change_marker(filled_board, l):
@@ -149,29 +126,16 @@ def change_marker(filled_board, l):
     #l is our access to all the variables within the input_mark_num() function
     print("inside the change_marker function")
 
-    print("These are all the variables from input_and_num", l)
+    print("These are all the variables from input_and_num:", l)
 
     board_list = l[0]
-
-
-    # board_coordinate = int(l[1])
     board_coordinate = l[1]
-
-
-
     player1_marker = l[2]
     player2_marker = l[3]
-    # stuff = l[4]
-
-    # print("What will this return?", stuff)    
 
     print("This is the filled_board variable", board_list)
 
-    # print("This is the player one response", int(player1_marker))
-
     print("This is the player one response", player1_marker)
-
-    # print("This is the player two response", int(player2_marker))
 
     print("This is the player two response", player2_marker)
 
@@ -179,19 +143,12 @@ def change_marker(filled_board, l):
 
     print("This is filled board", filled_board)
 
-    # for i in range(1,10): 
-    #     print("this is i =", i)
-    # for num in filled_board[i]:
-    # for num in filled_board:
-        # print("this is num", num)
-        # print("This is filled_board[num] = ", num)
+
     print("This is board coordinate =", board_coordinate)
-            # if (board_coordinate == filled_board[i]):
+
     if (board_coordinate == 1):
         print("inside the if statement locating the index and switching value to the character marker")
-            # for num in filled_board:
-        # print("This is an interant of num in filled board", num)
-        # if (board_coordinate == num):
+           
         print("the coordinate and the num have linked")
         filled_board[board_coordinate] = player1_marker
     
@@ -201,6 +158,75 @@ def change_marker(filled_board, l):
         filled_board[board_coordinate] = player1_marker
 
     print_board(filled_board)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# if (board_coordinate == filled_board[i]):
+
+
+
+
+
+
+
+
+
+ # for num in filled_board:
+        # print("This is an interant of num in filled board", num)
+        # if (board_coordinate == num):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # board_coordinate = int(l[1])
+    # stuff = l[4]
+
+    # print("What will this return?", stuff)    
+
+
+    # print("This is the player one response", int(player1_marker))
+
+
+
+    # print("This is the player two response", int(player2_marker))
+
+
+    # for i in range(1,10): 
+    #     print("this is i =", i)
+    # for num in filled_board[i]:
+    # for num in filled_board:
+        # print("this is num", num)
+        # print("This is filled_board[num] = ", num)
+  
     
 
 
@@ -233,5 +259,8 @@ def win(board_list, mark_and_num):
 
 print_board(filled_board)
 # l = input_mark_num(mark_and_num)
-l = input_mark_num(filled_board, mark, num)
+# l = input_mark_num(filled_board, mark, num, this_diff_num)
+# l = input_mark_num(filled_board, mark, num, need_that)
+# l = input_mark_num(filled_board, mark, num, this_num, player1_mark, player2_mark)
+l = input_mark_num(filled_board, mark, num, num, player1_mark, player2_mark)
 change_marker(filled_board, l)
