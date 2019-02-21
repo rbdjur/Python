@@ -60,38 +60,55 @@ def input_mark_num(filled_board, num, mark):
 
     print("This is num before the loop", num)
 
-    # while(type(num) == type("l")):
-    if(type(num) == type("l")):
 
-        while (type(num) != type(1)):
-            print("This is a letter. Not a valid response")
-            num = input("Please enter a number:")
-
-            for char in filled_board:
-                if(num == char):
-                    print("The user entered a string that is in filled_board")
-
-                    this_num = int(num)
-
-                    print(f"the match is {this_num} and the type is {type(this_num)}")
-
-                    # return this_num
-            
+    # if(type(this_num) == type("l")):
+    # if(type(num) == type("l")):
+    for char in filled_board:
+        print("The type of char is ", type(char))
+        print("The type of num is ", type(num))
+        if(num == char):
+            print("The user entered a string that is in filled_board")
+            this_num = int(num)
+            print(f"the match is {this_num} and the type is {type(this_num)}")
+            break
+        else:
+            print("Redirect")
         
-    if(type(num) != type(1)):
-        for char in filled_board:
-            if (num == char):
-                print("This is num inside the for loop of filled_board", num)
+    # for char in filled_board:
+        # elif (num != char):
+        #     # while(num != char):
+        #     diff_num = input("Please enter a valid response: ")
+        #         #may need to change above to a different variable name
+        #     while(diff_num != char):
+        #         if (diff_num == char):
+        #             print("We are getting somewhere")
 
-                print("This is a character in filled_board", char)
 
-                int_num = int(num)
 
-                print(f"The user entered {int_num} of type {type(int_num)}")
+                # if (num != char):
+                #     while(num != char):
+                #         print("What the user entered is not in the list")
+                #         another = input("Please PLEASE PLEASE enter a number (1-9): ")
+
+                #         if (another == char):
+                #             print("Correct answer")
+                #             break
                 
-                print("After match, type of str_num = int", type(int_num))
-                break
 
+    
+        # print("This is this_num", this_num)
+
+
+            
+
+
+        # while (type(this_num) != type(1)):
+            # while (type(num) != type(1)):
+            #     print("This is a letter. Not a valid response")
+            #     num = input("Please enter a number:")
+
+
+    # if (type())
     integer_num = int(num)
 
     if (integer_num < 9):
