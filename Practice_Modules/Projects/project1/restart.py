@@ -70,22 +70,21 @@ def input_num(filled_board, num):
 
             return num
 
-
-    
-def handle_input(inc):
+  
+def handle_input(stuff):
     print("Inside input_num_wrong")
-    print("lets see what this is about", inc)
-    print("This is the type for inc", type(inc))
+    print("lets see what this is about", stuff)
+    print("This is the type for inc", type(stuff))
 
-    if (type(inc) == type(1)):
+    if (type(stuff) == type(1)):
         print("inside the if statement only if inc is a number.")
 
         print("Here is the filled_board", filled_board)
 
-    if(type(inc) == type("l")):
+    if(type(stuff) == type("l")):
         print("inside the if statement only if inc is a string.")
         
-        while(type(inc) != type(1)):
+        while(type(stuff) != type(1)):
             ask_again = input("Not a valid answer.  Please enter a number:")
             for thing in filled_board:
                 if(ask_again == thing):
@@ -93,26 +92,15 @@ def handle_input(inc):
                     inc = int(ask_again)
                     finally_correct = inc
                     print(f"This is {finally_correct} and the type is {type(finally_correct)}")
-                    break
-
-    
-  
-
+                    return inc
+                    # break
+            
 
 
-    
-    #     if(num != char):
-    #         while(num != char):
-    #             if(type(num) == type(char)):
-    #                 
-    #                 for char in filled_board:
-    #                     if(num == char):
-    #                         print("YAY")
-    #                         print("WE ARE GETTING SOMEWHERE")
-    #                         num = int(num)
-    #                         print(f"num is {num} and type {type(num)}")
-    #                         break
-    # print(num)
+
+        # return (mark, num, player1_mark, player2_mark)
+
+
                                       
     # integer_num = int(num)
 
@@ -151,48 +139,49 @@ def handle_input(inc):
 
 
 
-
-
-    return (mark, num, player1_mark, player2_mark)
-
-def change_marker(filled_board, l):
 # def change_marker(filled_board, l):
+# def change_marker(filled_board, l):
+def change_marker(filled_board, inc):
+
 
     #l is the place holder for:
     # l = input_mark_num()
     #l is our access to all the variables within the input_mark_num() function
     print("inside the change_marker function")
 
-    print("These are all the variables from input_and_num:", l)
+    # print("These are all the variables from input_and_num:", l)
 
-    board_list = l[0]
-    board_coordinate = l[1]
-    player1_marker = l[2]
-    player2_marker = l[3]
+    # board_list = l[0]
+    # board_coordinate = l[1]
+    # player1_marker = l[2]
+    # player2_marker = l[3]
 
-    print("This is the filled_board variable", board_list)
+    print("This is inc", inc)
+    print("This is the filled_board variable", filled_board)
 
-    print("This is the player one response", player1_marker)
+    # print("This is the filled_board variable", board_list)
 
-    print("This is the player two response", player2_marker)
+    # print("This is the player one response", player1_marker)
 
-    print("This is the location_list", board_coordinate)
+    # print("This is the player two response", player2_marker)
 
-    print("This is filled board", filled_board)
+    # print("This is the location_list", board_coordinate)
+
+    # print("This is filled board", filled_board)
 
 
-    print("This is board coordinate =", board_coordinate)
+    # print("This is board coordinate =", board_coordinate)
 
-    if (board_coordinate == 1):
-        print("inside the if statement locating the index and switching value to the character marker")
+    # if (board_coordinate == 1):
+    #     print("inside the if statement locating the index and switching value to the character marker")
            
-        print("the coordinate and the num have linked")
-        filled_board[board_coordinate] = player1_marker
+    #     print("the coordinate and the num have linked")
+    #     filled_board[board_coordinate] = player1_marker
     
-    if (board_coordinate == 2):
-        print("inside the if statement locating the index and switching value to the character marker")
-        print("the coordinate and the num have linked")
-        filled_board[board_coordinate] = player1_marker
+    # if (board_coordinate == 2):
+    #     print("inside the if statement locating the index and switching value to the character marker")
+    #     print("the coordinate and the num have linked")
+    #     filled_board[board_coordinate] = player1_marker
 
     print_board(filled_board)
 
@@ -266,8 +255,6 @@ def change_marker(filled_board, l):
   
     
 
-
-
 def win(board_list, mark_and_num):
     print("Inside win function.")
     if (board_list[7] == board_list[8] == board_list[9] == mark_and_num):
@@ -304,8 +291,9 @@ def win(board_list, mark_and_num):
 
 
 
-
 print_board(filled_board)
 input_mark(filled_board, mark)
-inc = input_num(filled_board,num)
-handle_biz = handle_input(inc)
+stuff = input_num(filled_board,num)
+handle_biz = handle_input(stuff)
+# change_marker(handle_biz)
+change_marker(filled_board, handle_biz)
