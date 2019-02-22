@@ -22,19 +22,73 @@ def print_board(board_list):
     print(f" " + board_list[4] + " " + '|' + " " + board_list[5] + " " + '|' + " " + board_list[6])
     print(f" " + board_list[1] + " " + '|' + " " + board_list[2] + " " + '|' + " " + board_list[3])
 
-# def input_mark_num(filled_list, mark, num, this_num, player1_mark, player2_mark):
-def input_mark(filled_board, mark):
+def input_mark_num(filled_list, mark, num, this_num, player1_mark, player2_mark):
+# def input_mark_num(filled_board, num, mark, this_diff_num):
    
-    mark = input("Hello, player one choose a symbol (X or O): ")
+    mark = input("Hello, player one chose a  symbol (X or O):")
 
     if (mark != "O" and mark != "X"):
         while (mark != "O" and mark != "X"):
+        # mark = input("Hello, player one chose a  symbol (X or O):")
+        # if (mark != "O" and mark != "X"):
             print("That is not a valid answer. Try again")
-            mark = input("Please enter a valid response. O or X: ")
+            mark = input("Please enter a valid response. O or X:")
+            # mark = input("Hello, player one chose a  symbol (X or O):")
+            # print("That is not a valid answer. Try again")
 
-    # print("This is num", num)
-    # print("This is mark", mark)
-    # print(f"Player one chose {mark}")
+
+    num = input("Now Player one,please choose a location (1-9) on the number pad:")
+
+    print("This is character before the loop", num)
+
+
+
+    for char in filled_board:
+        print("The type of char is ", type(char))
+        print("The type of num is ", type(num))
+        if(num == char):
+            print("The user entered a string that is in filled_board")
+            this_num = int(num)
+            print(f"the match is {this_num} and the type is {type(this_num)}")
+        #     break
+        else:
+            print("Redirect")
+    
+        if(num != char):
+            # num = 'l'
+            while(num != char):
+                if(type(num) == type(char)):
+                    num = input("Enter a number, PLEASE PLEASE PLEASE:")
+                    for char in filled_board:
+                    # if(diff_num == char):
+                        if(num == char):
+                            print("WE ARE GETTING SOMEWHERE")
+                            # diff_num = int(diff_num)
+                            num = int(num)
+                            print(f"num is {num} and type {type(num)}")
+    
+                                          
+    integer_num = int(num)
+
+    if (integer_num < 9):
+        print("Valid response")
+        print("integer_num is:", integer_num)
+    else:
+        print("Not within range")
+
+    while (integer_num > 9):
+        print(f"Your choice of {integer_num} is invalid")
+        print("Enter a valid number on the number pad that is 1 through 9")
+        num = int(input("Your new selection is:"))
+        if (num < 9):
+            print(f"Your choice of {num} is a valid answer")
+            break
+
+    
+    print("This is num", num)
+    print("This is mark", mark)
+    # print("This_diff_num is", this_diff_num)
+    # print("Need_that", need_that)
 
     player1_mark = mark
 
@@ -43,117 +97,13 @@ def input_mark(filled_board, mark):
     else:
         player2_mark = "X"
 
-    print("The character for player one is:", player1_mark)
-    print("The character for player one is:", player2_mark)
-
-    return mark
-
-
-def input_num(filled_board, num):
-    num = input("Now Player one,please choose a location (1-9) on the number pad:")
-
-    print("This is num before the loop", num)
-    print("This is num type before the loop", type(num))
-
-    for thing in filled_board:
-        print(thing)
-        if(num == thing):
-            print("The user entered a string that is in filled_board")
-            matching_num_filled_board = int(num)
-            print(f"the match is {matching_num_filled_board} and the type is {type(matching_num_filled_board)}")
-
-            return matching_num_filled_board
-
-    for thing in filled_board:
-        if(num != thing):
-            print(f"{num} isnt the answer, Redirect")
-
-            return num
-
-
-    
-def handle_input(inc):
-    print("Inside input_num_wrong")
-    print("lets see what this is about", inc)
-    print("This is the type for inc", type(inc))
-
-    if (type(inc) == type(1)):
-        print("inside the if statement only if inc is a number.")
-
-        print("Here is the filled_board", filled_board)
-
-    if(type(inc) == type("l")):
-        print("inside the if statement only if inc is a string.")
-        
-        while(type(inc) != type(1)):
-            ask_again = input("Not a valid answer.  Please enter a number:")
-            for thing in filled_board:
-                if(ask_again == thing):
-                    print("LETS GO")
-                    inc = int(ask_again)
-                    finally_correct = inc
-                    print(f"This is {finally_correct} and the type is {type(finally_correct)}")
-                    break
-
-    
-  
-
-
-
-    
-    #     if(num != char):
-    #         while(num != char):
-    #             if(type(num) == type(char)):
-    #                 
-    #                 for char in filled_board:
-    #                     if(num == char):
-    #                         print("YAY")
-    #                         print("WE ARE GETTING SOMEWHERE")
-    #                         num = int(num)
-    #                         print(f"num is {num} and type {type(num)}")
-    #                         break
-    # print(num)
-                                      
-    # integer_num = int(num)
-
-    # if (integer_num < 9):
-    #     print("Valid response")
-    #     print("integer_num is:", integer_num)
-    # else:
-    #     print("Not within range")
-
-    # while (integer_num > 9):
-    #     print(f"Your choice of {integer_num} is invalid.")
-    #     print("Enter a valid number on the number pad that is 1 through 9")
-    #     num = int(input("Your new selection is:"))
-    #     if (num < 9):
-    #         print(f"Your choice of {num} is a valid answer")
-    #         break
-
-    
-    # print("This is num", num)
-    # print("This is mark", mark)
-
-    # print("player one character is:", player1_mark)
-    # print("Player two character is:", player2_mark)
+    print("player one character is:", player1_mark)
+    print("Player two character is:", player2_mark)
 
     # return (mark, num, this_num, this_diff_num, player1_mark, player2_mark)
 
     # return (mark, num, this_num, this_diff_num, player1_mark, player2_mark)
-
-
-
-
-
-    # return (mark, num, this_num, player1_mark, player2_mark)
-
-
-
-
-
-
-
-    return (mark, num, player1_mark, player2_mark)
+    return (mark, num, this_num, player1_mark, player2_mark)
 
 def change_marker(filled_board, l):
 # def change_marker(filled_board, l):
@@ -294,18 +244,10 @@ def win(board_list, mark_and_num):
     if (board_list[7] == board_list[5] == board_list[3] == mark_and_num):
         print("Win")
 
-# print_board(filled_board)
+print_board(filled_board)
 # l = input_mark_num(mark_and_num)
 # l = input_mark_num(filled_board, mark, num, this_diff_num)
 # l = input_mark_num(filled_board, mark, num, need_that)
 # l = input_mark_num(filled_board, mark, num, this_num, player1_mark, player2_mark)
-# l = input_mark_num(filled_board, mark, num, num, player1_mark, player2_mark)
-# change_marker(filled_board, l)
-
-
-
-
-print_board(filled_board)
-input_mark(filled_board, mark)
-inc = input_num(filled_board,num)
-handle_biz = handle_input(inc)
+l = input_mark_num(filled_board, mark, num, num, player1_mark, player2_mark)
+change_marker(filled_board, l)
