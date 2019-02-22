@@ -41,8 +41,6 @@ def input_mark_num(filled_list, mark, num, this_num, player1_mark, player2_mark)
 
     print("This is num before the loop", num)
 
-    # if(type(this_num) == type("l")):
-    # if(type(num) == type("l")):
     for char in filled_board:
         print("The type of char is ", type(char))
         print("The type of num is ", type(num))
@@ -55,9 +53,23 @@ def input_mark_num(filled_list, mark, num, this_num, player1_mark, player2_mark)
             print("Redirect")
     
     if(num != char):
-        # while(num != char):
-        diff_num = input("Enter a number, PLEASE PLEASE PLEASE:")
-        for char in filled_board:
+        while(num != char):
+            diff_num = input("Enter a number, PLEASE PLEASE PLEASE:")
+            print("these are char", char)
+            for char in filled_board:
+                if(diff_num == char):
+                    print("YAY")
+
+        # for char in filled_board:
+        #     if(type(diff_num) != type(1)):
+        #         print("We in this")
+        #         while (type(diff_num) == type(1)):
+        #             keep_asking = input("Got to keep asking")
+                    # if(keep_asking == char):
+                    #     print("OH YEAH")
+
+        
+        # for char in filled_board:
             if(diff_num == char):
                 print("WE ARE GETTING SOMEWHERE")
                 # this_diff_num = int(diff_num)
@@ -65,19 +77,24 @@ def input_mark_num(filled_list, mark, num, this_num, player1_mark, player2_mark)
                 # print(f"this_diff_num is {this_diff_num} and type {type(this_diff_num)}")
                 print(f"this_diff_num is {num} and type {type(num)}")
                 break
+        # if(type(diff_num) != type(1)):
+        #     print("We in this")
+        #     while (type(diff_num) != type(1)):
+        #         keep_asking = input("Got to keep asking")
 
 
-        if(diff_num != char):
-            another_attempt = input("cmon fam, enter a number:")
-            for char in filled_board:
-                while (another_attempt != char):
-                    keep_trying = input("Keep trying:")
-                    for char in filled_board:
-                        if(keep_trying == char):
-                            print("Oh its a match match")
-                            keep_trying = int(keep_trying)
-                            print(f"despite being not a match {keep_trying} is now a match and the type should be an int likeso {type(keep_trying)}")
-                            return keep_trying
+
+        # if(diff_num != char):
+        #     another_attempt = input("cmon fam, enter a number:")
+        #     for char in filled_board:
+        #         while (another_attempt != char):
+        #             keep_trying = input("Keep trying:")
+        #             for char in filled_board:
+        #                 if(keep_trying == char):
+        #                     print("Oh its a match match")
+        #                     keep_trying = int(keep_trying)
+        #                     print(f"despite being not a match {keep_trying} is now a match and the type should be an int likeso {type(keep_trying)}")
+        #                     return keep_trying
 
     
 
