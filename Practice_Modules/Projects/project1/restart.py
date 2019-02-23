@@ -22,41 +22,61 @@ def print_board(board_list):
     print(f" " + board_list[4] + " " + '|' + " " + board_list[5] + " " + '|' + " " + board_list[6])
     print(f" " + board_list[1] + " " + '|' + " " + board_list[2] + " " + '|' + " " + board_list[3])
 
-# def input_mark_num(filled_list, mark, num, this_num, player1_mark, player2_mark):
-def input_mark(filled_board, mark):
+# def input_mark(filled_board, mark):
+# def input_mark(filled_board, mark, player1_mark, player2_mark):
+def input_mark(filled_board):
+
    
     mark = input("Hello, player one choose a symbol (X or O): ")
 
+    #If the user (player one) does not choose "O" or "X" as an option, the user will be prompted to enter a response until their response is "O" or "X"
     if (mark != "O" and mark != "X"):
         while (mark != "O" and mark != "X"):
             print("That is not a valid answer. Try again")
             mark = input("Please enter a valid response. O or X: ")
 
-    # print("This is num", num)
-    # print("This is mark", mark)
-    # print(f"Player one chose {mark}")
 
+    #user enters correct character, answer is stored as (player1_mark) 
     player1_mark = mark
 
+    #program determines character assignment (player one and player two)
+
+    #player one (player1_mark) chose "X", player2_mark is assigned "O"
     if(player1_mark == "X"):
         player2_mark = "O"
+
+    #if player one chooses "O", then player two will be assigned "X". 
     else:
         player2_mark = "X"
 
+    #print characters for referencing purposes
     print("The character for player one is:", player1_mark)
     print("The character for player one is:", player2_mark)
 
-    return (mark, player2_mark)
+    # return (mark, player2_mark)
+    return (filled_board,player1_mark, player2_mark)
 
 
-def input_num(filled_board, num):
+
+def input_num(filled_board):
+# def input_num(filled_board, player1_mark, player2_mark):
+# def input_num(filled_board, num, player1_mark, player2_mark):
+# def input_num(filled_board, num):
+
+
     num = input("Now Player one,please choose a location (1-9) on the number pad:")
 
     print("This is num before the loop", num)
     print("This is num type before the loop", type(num))
 
-    for thing in filled_board:
-        print(thing)
+    #Filled board holds the filled board (filled_board[0]), characters of player one (filled_board[1]) and player two (filled_board[2])
+    print("This is thing", filled_board)
+
+
+    #Loop through the filled_board list
+    for thing in filled_board[0]:
+        print("LOOK FOR ME", thing)
+
         if(num == thing):
             print("The user entered a string that is in filled_board")
             # matching_num_filled_board = int(num)
@@ -78,28 +98,33 @@ def input_num(filled_board, num):
 # def handle_input(matching_num_filled_board, num):
 def handle_input(num):
     print("Inside handle_input")
-    print("lets see what this is about", stuff)
-    print("This is the type for inc", type(stuff))
+    # print("lets see what this is about", stuff)
+    # print("This is the type for inc", type(stuff))
 
-    if (type(stuff) == type(1)):
+
+    print("lets see what this is about", state_two)
+    print("This is the type for inc", type(state_two))
+
+    #The user 
+    if (type(state_two) == type(1)):
         print("inside the if statement only if inc is a number.")
 
-        print("What is :", stuff)
-        print("This is the type of stuff", type(stuff))
+        print("What is :", state_two)
+        print("This is the type of stuff", type(state_two))
 
-        if (stuff < 9):
+        if (state_two <= 9):
             print("Valid response")
-            print("integer_num is:", stuff)
+            print("integer_num is:", state_two)
         else:
             print("Not within range")
 
         print("Here is the filled_board", filled_board)
-        return stuff
+        return state_two
 
-    if(type(stuff) == type("l")):
+    if(type(state_two) == type("l")):
         print("inside the if statement only if inc is a string.")
         
-        while(type(stuff) != type(1)):
+        while(type(state_two) != type(1)):
             ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
             for thing in filled_board:
                 if(ask_again == thing):
@@ -119,21 +144,7 @@ def handle_input(num):
                                       
     # integer_num = int(num)
 
-    # if (integer_num < 9):
-    #     print("Valid response")
-    #     print("integer_num is:", integer_num)
-    # else:
-    #     print("Not within range")
 
-    # while (integer_num > 9):
-    #     print(f"Your choice of {integer_num} is invalid.")
-    #     print("Enter a valid number on the number pad that is 1 through 9")
-    #     num = int(input("Your new selection is:"))
-    #     if (num < 9):
-    #         print(f"Your choice of {num} is a valid answer")
-    #         break
-
-    
     print("This is num", num)
     print("This is mark", mark)
 
@@ -156,7 +167,8 @@ def handle_input(num):
 
 # def change_marker(filled_board, l):
 # def change_marker(filled_board, l):
-def change_marker(filled_board, inc, stuff):
+# def change_marker(filled_board, inc, stuff):
+def change_marker(filled_board, inc, player1_mark, player2_mark):
 
 
     #l is the place holder for:
@@ -173,6 +185,9 @@ def change_marker(filled_board, inc, stuff):
 
     print("This is inc", inc)
     print("This is the filled_board variable", filled_board)
+    print("This is player1_mark, hopefully it is the characters of player one and player two.", player1_mark)
+
+    print("This is player2_mark, hopefully it is the characters of player one and player two.", player2_mark)
 
     # print("This is the filled_board variable", board_list)
 
@@ -307,12 +322,19 @@ def win(board_list, mark_and_num):
 
 
 print_board(filled_board)
-input_mark(filled_board, mark)
-stuff = input_num(filled_board,num)
-# handle_biz = handle_input(stuff)
+
+
+state_one = input_mark(filled_board)
+# state_one = input_mark(filled_board, mark, player1_mark, player2_mark)
+# input_mark(filled_board, mark)
+
+state_two = input_num(state_one)
+# state_two = input_num(state_one,player1_mark, player2_mark)
+# state_two = input_num(filled_board,num,player1_mark, player2_mark)
+# stuff = input_num(filled_board,num)
+
 # handle_biz = handle_input(matching_num_filled_board, num)
-handle_biz = handle_input(num)
+state_three = handle_input(num)
 
-
-# change_marker(handle_biz)
-change_marker(filled_board, handle_biz, stuff)
+# change_marker(filled_board, handle_biz, stuff)
+change_marker(filled_board, state_three, player1_mark, player2_mark)
