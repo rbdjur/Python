@@ -82,62 +82,42 @@ def input_num(filled_board):
             #The input is a string type but is not converted to a int type
             num = int(num)
             print(f"the match is {num} and the type is {type(num)}")
-        
-        else: 
-            if(num != thing):
-                print(f"YERR {num} isn't a valid answer, Redirect")
-            while(num != thing):
-                ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
-                if(ask_again == thing):
-                    num = int(ask_again)
-
-
-
 
             #Need to pass the user response and the character assignment
             return (num, filled_board)
 
-
-
     #Loop through the filled_board list if answer is not a character in the list.  Redirect handle_input() 
 
 
-        # print("CHECK ME OUT", filled_board[0])
+    print("CHECK ME OUT", filled_board[0])
 
-    # for thing in filled_board[0]:
-    #     print("thing thing", thing)
-    #     for thing_thing in thing:
-            # print("WE NEED THIS", thing_thing)
-            # if(num != thing_thing):
-            #     print(f"YERR {num} isn't a valid answer, Redirect")
+    for thing in filled_board[0]:
+        print("thing thing", thing)
+        if(num != thing):
+            print(f"YERR {num} isn't a valid answer, Redirect")
 
             
 
             # while(num != thing):
             # while(num != thing):
-
-
-
-
-
-                # if (num != thing):
-                    # ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
-                    # for tee_hee in filled_board:
-                    #     print("We are here")
-                    #     print("This is ask_again", ask_again)
-                    #     print("This is tee_hee", tee_hee)
-                    #     while(ask_again == tee_hee):
-                    #         print("LETS GO")
+            if (num != thing):
+                ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
+                for tee_hee in filled_board:
+                    print("We are here")
+                    print("This is ask_again", ask_again)
+                    print("This is tee_hee", tee_hee)
+                    while(ask_again == tee_hee):
+                        print("LETS GO")
 
                         # inc = int(ask_again)
-                            # num = int(ask_again)
+                        num = int(ask_again)
 
                         # finally_correct = inc
-                            # finally_correct = num
+                        finally_correct = num
 
-                            # print(f"This is {finally_correct} and the type is {type(finally_correct)}")
+                        print(f"This is {finally_correct} and the type is {type(finally_correct)}")
                         
-                            # return num
+                        return num
                         # return inc
 
 
