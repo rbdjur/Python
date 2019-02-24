@@ -1,7 +1,7 @@
 import string
 
 filled_board = ['#','1','2','3','4','5','6','7','8','9']
-# filled_board = [0,1,2,3,4,5,6,7,8,9]
+board_location = [0,1,2,3,4,5,6,7,8,9]
 
 location_list = []
 character_list = []
@@ -70,47 +70,115 @@ def input_num(filled_board):
     print("This is num type before the loop", type(num))
 
     #Filled board holds the filled board (filled_board[0]), characters of player one (filled_board[1]) and player two (filled_board[2])
-    print("This is thing", filled_board)
+    print("This holds the filled_board list and player characters", filled_board)
 
 
-    #Loop through the filled_board list
+    #Loop through the filled_board list, and check for correct answer
     for thing in filled_board[0]:
-        print("LOOK FOR ME", thing)
+        print("These are the characters in the filled_board list", thing)
 
         if(num == thing):
-            print("The user entered a string that is in filled_board")
-            # matching_num_filled_board = int(num)
+            print("The user entered a character (string) that is in filled_board")
+            #The input is a string type but is not converted to a int type
             num = int(num)
-            # print(f"the match is {matching_num_filled_board} and the type is {type(matching_num_filled_board)}")
             print(f"the match is {num} and the type is {type(num)}")
+        
+        else: 
+            if(num != thing):
+                print(f"YERR {num} isn't a valid answer, Redirect")
+            while(num != thing):
+                ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
+                if(ask_again == thing):
+                    num = int(ask_again)
 
-            # return matching_num_filled_board
-            return num
 
-    for thing in filled_board:
-        if(num != thing):
-            print(f"{num} isn't a valid answer, Redirect")
 
-            return num
 
-  
-# def handle_input(stuff):
-# def handle_input(matching_num_filled_board, num):
-def handle_input(num):
+            #Need to pass the user response and the character assignment
+            return (num, filled_board)
+
+
+
+    #Loop through the filled_board list if answer is not a character in the list.  Redirect handle_input() 
+
+
+        # print("CHECK ME OUT", filled_board[0])
+
+    # for thing in filled_board[0]:
+    #     print("thing thing", thing)
+    #     for thing_thing in thing:
+            # print("WE NEED THIS", thing_thing)
+            # if(num != thing_thing):
+            #     print(f"YERR {num} isn't a valid answer, Redirect")
+
+            
+
+            # while(num != thing):
+            # while(num != thing):
+
+
+
+
+
+                # if (num != thing):
+                    # ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
+                    # for tee_hee in filled_board:
+                    #     print("We are here")
+                    #     print("This is ask_again", ask_again)
+                    #     print("This is tee_hee", tee_hee)
+                    #     while(ask_again == tee_hee):
+                    #         print("LETS GO")
+
+                        # inc = int(ask_again)
+                            # num = int(ask_again)
+
+                        # finally_correct = inc
+                            # finally_correct = num
+
+                            # print(f"This is {finally_correct} and the type is {type(finally_correct)}")
+                        
+                            # return num
+                        # return inc
+
+
+                
+
+
+ # ==========================================
+
+
+            #Need to pass the user response and the character assignment
+            
+            # return num
+
+ # ==========================================
+
+
+
+
+
+            
+    # =======================================
+    # for thing in filled_board:
+    #     if(num != thing):
+    #         print(f"{num} isn't a valid answer, Redirect")
+
+    #         #Need to pass the user response and the character assignment
+    #         return num
+    # =======================================
+
+def handle_input(num, input_num):
     print("Inside handle_input")
-    # print("lets see what this is about", stuff)
-    # print("This is the type for inc", type(stuff))
 
+    #Confirms access and manpiluation of passed data (num) from input_num function.
+    print("lets see what state_two is about", state_two)
+    print("This is the type for state_two", type(state_two))
 
-    print("lets see what this is about", state_two)
-    print("This is the type for inc", type(state_two))
+    #State two should either be an int type or a string
 
-    #The user 
+    #If state_two is an int type
     if (type(state_two) == type(1)):
-        print("inside the if statement only if inc is a number.")
-
-        print("What is :", state_two)
-        print("This is the type of stuff", type(state_two))
+        print(f"Passed variable, {state_two}, is a number.")
 
         if (state_two <= 9):
             print("Valid response")
@@ -121,45 +189,120 @@ def handle_input(num):
         print("Here is the filled_board", filled_board)
         return state_two
 
-    if(type(state_two) == type("l")):
-        print("inside the if statement only if inc is a string.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # ==========================================
+    #If state_two is a string type
+    # if(type(state_two) == type("l")):
+    #     print(f"Passed variable, {state_two}, is a string.")
         
-        while(type(state_two) != type(1)):
-            ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
-            for thing in filled_board:
-                if(ask_again == thing):
-                    print("LETS GO")
-                    inc = int(ask_again)
-                    finally_correct = inc
-                    print(f"This is {finally_correct} and the type is {type(finally_correct)}")
-                    return inc
-                    # break
+
+ # ==========================================
+        #The program will continue to ask to enter a valid response as long as the response is a string
+        # while(type(state_two) != type(1)):
+        #     ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
+ # ==========================================
             
+            
+            
+            #Each time the user enters a response, the program will loop through the filled_board list and see if the variable, ask_again, is equal to a character in that list.
 
 
 
-        # return (mark, num, player1_mark, player2_mark)
+            # for thing in filled_board:
+
+ # ==========================================
+
+                #If the character is in that list (string type), then the variable, ask_again, will be converted to a number type
 
 
-                                      
-    # integer_num = int(num)
+                # if(ask_again == thing):
+                #     print("LETS GO")
+                #     inc = int(ask_again)
+
+ # ==========================================
 
 
-    print("This is num", num)
-    print("This is mark", mark)
-
-    # print("player one character is:", player1_mark)
-    # print("Player two character is:", player2_mark)
-
-    # return (mark, num, this_num, this_diff_num, player1_mark, player2_mark)
-
-    # return (mark, num, this_num, this_diff_num, player1_mark, player2_mark)
-
-
+                    #May be unneccessary to assign inc to another variable, may just change inc to finalluy_correct
 
 
 
-    # return (mark, num, this_num, player1_mark, player2_mark)
+                    # finally_correct = inc
+                    # print(f"This is {finally_correct} and the type is {type(finally_correct)}")
+
+
+
+ # ==========================================
+
+
+
+                    # return inc
+                    # break
+ # ===========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -168,120 +311,90 @@ def handle_input(num):
 # def change_marker(filled_board, l):
 # def change_marker(filled_board, l):
 # def change_marker(filled_board, inc, stuff):
-def change_marker(filled_board, inc, player1_mark, player2_mark):
-
-
-    #l is the place holder for:
-    # l = input_mark_num()
-    #l is our access to all the variables within the input_mark_num() function
+def change_marker(filled_board, board_location, inc, state_two):
     print("inside the change_marker function")
-
-    # print("These are all the variables from input_and_num:", l)
-
-    # board_list = l[0]
-    # board_coordinate = l[1]
-    # player1_marker = l[2]
-    # player2_marker = l[3]
 
     print("This is inc", inc)
     print("This is the filled_board variable", filled_board)
-    print("This is player1_mark, hopefully it is the characters of player one and player two.", player1_mark)
+    print("This is the board_location - use this list to link filled board (string representation of number on number pad to the player player to the actual number to change the letter.", board_location)
 
-    print("This is player2_mark, hopefully it is the characters of player one and player two.", player2_mark)
+    #This holds in order in a tuple starting ot [0]: player one's answer, the filled_board list, player one's character, player two's character
+    print("This is state_two", state_two)
+    print("This should be the list of numbers and the characters of player one and two respectively", state_two[1])
 
-    # print("This is the filled_board variable", board_list)
+    print("Character of Player one passed from function to function : ", state_two[1][1])
+    print("Character of Player two passed from function to function : ", state_two[1][2])
 
-    # print("This is the player one response", player1_marker)
+    print("IMPORTANT, this is the location on the board", state_two[0])
 
-    # print("This is the player two response", player2_marker)
+    # play_one_char = state_two[1][1]
+    # play_two_char = state_two[1][2]
 
-    # print("This is the location_list", board_coordinate)
+    player1_marker = state_two[1][1]
+    # player2_marker = state_two[1][2]
 
-    # print("This is filled board", filled_board)
+    num_loc = state_two[0]
+
+    for xzy in board_location:
+        print("location could be ", xzy)
+        if (num_loc == xzy):
+            print("inside the if statement.")
+            print("This is the location on the board", board_location[num_loc])
+            print("This is player1_marker", player1_marker)
+            filled_board[num_loc] = player1_marker
 
 
-    # print("This is board coordinate =", board_coordinate)
 
-    # if (board_coordinate == 1):
+
+
+    # if (num_loc == 1):
     #     print("inside the if statement locating the index and switching value to the character marker")
            
     #     print("the coordinate and the num have linked")
-    #     filled_board[board_coordinate] = player1_marker
+    #     filled_board[num_loc] = player1_marker
     
-    # if (board_coordinate == 2):
+    # if (num_loc == 2):
     #     print("inside the if statement locating the index and switching value to the character marker")
     #     print("the coordinate and the num have linked")
-    #     filled_board[board_coordinate] = player1_marker
+    #     filled_board[num_loc] = player1_marker
+
+    # if (num_loc == 3):
+    #     print("inside the if statement locating the index and switching value to the character marker")
+    #     print("the coordinate and the num have linked")
+    #     filled_board[num_loc] = player1_marker
+    
+    # if (num_loc == 4):
+    #     print("inside the if statement locating the index and switching value to the character marker")
+    #     print("the coordinate and the num have linked")
+    #     filled_board[num_loc] = player1_marker
+    
+    # if (num_loc == 5):
+    #     print("inside the if statement locating the index and switching value to the character marker")
+    #     print("the coordinate and the num have linked")
+    #     filled_board[num_loc] = player1_marker
+    
+    # if (num_loc == 6):
+    #     print("inside the if statement locating the index and switching value to the character marker")
+    #     print("the coordinate and the num have linked")
+    #     filled_board[num_loc] = player1_marker
+    
+    # if (num_loc == 7):
+    #     print("inside the if statement locating the index and switching value to the character marker")
+    #     print("the coordinate and the num have linked")
+    #     filled_board[num_loc] = player1_marker
+    
+    # if (num_loc == 8):
+    #     print("inside the if statement locating the index and switching value to the character marker")
+    #     print("the coordinate and the num have linked")
+    #     filled_board[num_loc] = player1_marker
+    
+    # if (num_loc == 9):
+    #     print("inside the if statement locating the index and switching value to the character marker")
+    #     print("the coordinate and the num have linked")
+    #     filled_board[num_loc] = player1_marker
 
     print_board(filled_board)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# if (board_coordinate == filled_board[i]):
-
-
-
-
-
-
-
-
-
- # for num in filled_board:
-        # print("This is an interant of num in filled board", num)
-        # if (board_coordinate == num):
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # board_coordinate = int(l[1])
-    # stuff = l[4]
-
-    # print("What will this return?", stuff)    
-
-
-    # print("This is the player one response", int(player1_marker))
-
-
-
-    # print("This is the player two response", int(player2_marker))
-
-
-    # for i in range(1,10): 
-    #     print("this is i =", i)
-    # for num in filled_board[i]:
-    # for num in filled_board:
-        # print("this is num", num)
-        # print("This is filled_board[num] = ", num)
   
     
 
@@ -334,7 +447,7 @@ state_two = input_num(state_one)
 # stuff = input_num(filled_board,num)
 
 # handle_biz = handle_input(matching_num_filled_board, num)
-state_three = handle_input(num)
+state_three = handle_input(num, state_two)
 
-# change_marker(filled_board, handle_biz, stuff)
-change_marker(filled_board, state_three, player1_mark, player2_mark)
+change_marker(filled_board, board_location, state_three, state_two)
+# change_marker(filled_board, state_three, player1_mark, player2_mark)
