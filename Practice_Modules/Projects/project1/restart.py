@@ -105,33 +105,11 @@ def input_num(filled_board):
                     print("YESSSSSS")
                     num = int(ask_again)
                     # inc = int(ask_again)
-                    print(f"this is ask_again convert into a {type(num)} under the name of {num}")
+                    print(f"this is {num} convert into a {type(num)} under the name of ask_again")
                         
-                    return num
+                    return (num, filled_board)
                     # return inc
 
- # ==========================================
-
-
-            #Need to pass the user response and the character assignment
-            
-            # return num
-
- # ==========================================
-
-
-
-
-
-            
-    # =======================================
-    # for thing in filled_board:
-    #     if(num != thing):
-    #         print(f"{num} isn't a valid answer, Redirect")
-
-    #         #Need to pass the user response and the character assignment
-    #         return num
-    # =======================================
 
 def handle_input(num, input_num):
     print("Inside handle_input")
@@ -157,126 +135,6 @@ def handle_input(num, input_num):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- # ==========================================
-    #If state_two is a string type
-    # if(type(state_two) == type("l")):
-    #     print(f"Passed variable, {state_two}, is a string.")
-        
-
- # ==========================================
-        #The program will continue to ask to enter a valid response as long as the response is a string
-        # while(type(state_two) != type(1)):
-        #     ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
- # ==========================================
-            
-            
-            
-            #Each time the user enters a response, the program will loop through the filled_board list and see if the variable, ask_again, is equal to a character in that list.
-
-
-
-            # for thing in filled_board:
-
- # ==========================================
-
-                #If the character is in that list (string type), then the variable, ask_again, will be converted to a number type
-
-
-                # if(ask_again == thing):
-                #     print("LETS GO")
-                #     inc = int(ask_again)
-
- # ==========================================
-
-
-                    #May be unneccessary to assign inc to another variable, may just change inc to finalluy_correct
-
-
-
-                    # finally_correct = inc
-                    # print(f"This is {finally_correct} and the type is {type(finally_correct)}")
-
-
-
- # ==========================================
-
-
-
-                    # return inc
-                    # break
- # ===========================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def change_marker(filled_board, l):
-# def change_marker(filled_board, l):
-# def change_marker(filled_board, inc, stuff):
 def change_marker(filled_board, board_location, inc, state_two):
     print("inside the change_marker function")
 
@@ -286,6 +144,7 @@ def change_marker(filled_board, board_location, inc, state_two):
 
     #This holds in order in a tuple starting ot [0]: player one's answer, the filled_board list, player one's character, player two's character
     print("This is state_two", state_two)
+
     print("This should be the list of numbers and the characters of player one and two respectively", state_two[1])
 
     print("Character of Player one passed from function to function : ", state_two[1][1])
@@ -297,7 +156,7 @@ def change_marker(filled_board, board_location, inc, state_two):
     # play_two_char = state_two[1][2]
 
     player1_marker = state_two[1][1]
-    # player2_marker = state_two[1][2]
+    player2_marker = state_two[1][2]
 
     num_loc = state_two[0]
 
@@ -308,56 +167,6 @@ def change_marker(filled_board, board_location, inc, state_two):
             print("This is the location on the board", board_location[num_loc])
             print("This is player1_marker", player1_marker)
             filled_board[num_loc] = player1_marker
-
-
-
-
-
-    # if (num_loc == 1):
-    #     print("inside the if statement locating the index and switching value to the character marker")
-           
-    #     print("the coordinate and the num have linked")
-    #     filled_board[num_loc] = player1_marker
-    
-    # if (num_loc == 2):
-    #     print("inside the if statement locating the index and switching value to the character marker")
-    #     print("the coordinate and the num have linked")
-    #     filled_board[num_loc] = player1_marker
-
-    # if (num_loc == 3):
-    #     print("inside the if statement locating the index and switching value to the character marker")
-    #     print("the coordinate and the num have linked")
-    #     filled_board[num_loc] = player1_marker
-    
-    # if (num_loc == 4):
-    #     print("inside the if statement locating the index and switching value to the character marker")
-    #     print("the coordinate and the num have linked")
-    #     filled_board[num_loc] = player1_marker
-    
-    # if (num_loc == 5):
-    #     print("inside the if statement locating the index and switching value to the character marker")
-    #     print("the coordinate and the num have linked")
-    #     filled_board[num_loc] = player1_marker
-    
-    # if (num_loc == 6):
-    #     print("inside the if statement locating the index and switching value to the character marker")
-    #     print("the coordinate and the num have linked")
-    #     filled_board[num_loc] = player1_marker
-    
-    # if (num_loc == 7):
-    #     print("inside the if statement locating the index and switching value to the character marker")
-    #     print("the coordinate and the num have linked")
-    #     filled_board[num_loc] = player1_marker
-    
-    # if (num_loc == 8):
-    #     print("inside the if statement locating the index and switching value to the character marker")
-    #     print("the coordinate and the num have linked")
-    #     filled_board[num_loc] = player1_marker
-    
-    # if (num_loc == 9):
-    #     print("inside the if statement locating the index and switching value to the character marker")
-    #     print("the coordinate and the num have linked")
-    #     filled_board[num_loc] = player1_marker
 
     print_board(filled_board)
 
@@ -390,30 +199,15 @@ def win(board_list, mark_and_num):
     if (board_list[7] == board_list[5] == board_list[3] == mark_and_num):
         print("Win")
 
-# print_board(filled_board)
-# l = input_mark_num(mark_and_num)
-# l = input_mark_num(filled_board, mark, num, this_diff_num)
-# l = input_mark_num(filled_board, mark, num, need_that)
-# l = input_mark_num(filled_board, mark, num, this_num, player1_mark, player2_mark)
-# l = input_mark_num(filled_board, mark, num, num, player1_mark, player2_mark)
-# change_marker(filled_board, l)
-
-
 
 print_board(filled_board)
 
 
 state_one = input_mark(filled_board)
-# state_one = input_mark(filled_board, mark, player1_mark, player2_mark)
-# input_mark(filled_board, mark)
 
 state_two = input_num(state_one)
-# state_two = input_num(state_one,player1_mark, player2_mark)
-# state_two = input_num(filled_board,num,player1_mark, player2_mark)
-# stuff = input_num(filled_board,num)
 
-# handle_biz = handle_input(matching_num_filled_board, num)
+
 state_three = handle_input(num, state_two)
 
 change_marker(filled_board, board_location, state_three, state_two)
-# change_marker(filled_board, state_three, player1_mark, player2_mark)
