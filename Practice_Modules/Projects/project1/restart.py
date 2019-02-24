@@ -93,7 +93,8 @@ def input_num(filled_board):
     for thing in filled_board[0]:
         print("This is still our num", num)
         print("thing thing", thing)
-        if(num != thing):
+        # if(num != thing):
+        while(num != thing):
             print("WHY")
             print(f"YERR {num} isn't a valid answer, Redirect")
             ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
