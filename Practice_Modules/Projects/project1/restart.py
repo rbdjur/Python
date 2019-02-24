@@ -88,41 +88,26 @@ def input_num(filled_board):
 
     #Loop through the filled_board list if answer is not a character in the list.  Redirect handle_input() 
 
-
     print("CHECK ME OUT", filled_board[0])
 
     for thing in filled_board[0]:
+        print("This is still our num", num)
         print("thing thing", thing)
         if(num != thing):
+            print("WHY")
             print(f"YERR {num} isn't a valid answer, Redirect")
+            ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
 
-            
-
-            # while(num != thing):
-            # while(num != thing):
-            if (num != thing):
-                ask_again = input("Not a valid answer.  Only numbers (1 through 9 are valid):")
-                for tee_hee in filled_board:
-                    print("We are here")
-                    print("This is ask_again", ask_again)
-                    print("This is tee_hee", tee_hee)
-                    while(ask_again == tee_hee):
-                        print("LETS GO")
-
-                        # inc = int(ask_again)
-                        num = int(ask_again)
-
-                        # finally_correct = inc
-                        finally_correct = num
-
-                        print(f"This is {finally_correct} and the type is {type(finally_correct)}")
+            for hope in filled_board[0]:
+                print("This is hope", hope)
+                if (ask_again == hope):
+                    print("YESSSSSS")
+                    num = int(ask_again)
+                    # inc = int(ask_again)
+                    print(f"this is ask_again convert into a {type(num)} under the name of {num}")
                         
-                        return num
-                        # return inc
-
-
-                
-
+                    return num
+                    # return inc
 
  # ==========================================
 
