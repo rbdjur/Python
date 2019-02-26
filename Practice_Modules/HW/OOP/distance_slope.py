@@ -23,7 +23,11 @@ class Line():
         x1 = self.coor1[0]
         y1 = self.coor1[1]
         x2 = self.coor2[0]
-        y2 = self.coor2[1] 
+        y2 = self.coor2[1]
+
+        #tuple unpacking method
+        # x1,y1 = self.coor1
+        # x2, y2 = self.coor2 
 
         #correct formula for distance
         return f"The distance for {self.coor1} and {self.coor2} is " + str(((x2 - x1)**2 + (y2 - y1)**2)**.5)
@@ -40,4 +44,10 @@ a = Line(coor1 = (4,12), coor2 = (8,10))
 
 print(a.slope())
 print(a.distance())
+
+b = Line((3,2),(8,10))
+
+print(b.slope())
+print(b.distance())
+
     
