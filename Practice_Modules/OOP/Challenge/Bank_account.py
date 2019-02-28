@@ -22,6 +22,9 @@ class Account():
             print("withdraw approved!")
             self.balance -= amount
             print("New balance is after withdrawal: ", self.balance)
+    
+    def __str__(self):
+        return f"The owner is {self.owner} and the balance is {self.balance}"
         
 
     
@@ -46,4 +49,6 @@ a.withdraw(1001)
 
 #show the balance, should be 1000, because started off with 500, deposited 500, then tried to withdraw 1001, but did not.  So should still be 1000.
 a.show_balance()
+
+print(a)
 
