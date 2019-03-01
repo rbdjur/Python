@@ -22,11 +22,8 @@ def print_board(board_list):
     print(f" " + board_list[4] + " " + '|' + " " + board_list[5] + " " + '|' + " " + board_list[6])
     print(f" " + board_list[1] + " " + '|' + " " + board_list[2] + " " + '|' + " " + board_list[3])
 
-# def input_mark(filled_board, mark):
-# def input_mark(filled_board, mark, player1_mark, player2_mark):
 def input_mark(filled_board):
 
-   
     mark = input("Hello, player one choose a symbol (X or O): ")
 
     #If the user (player one) does not choose "O" or "X" as an option, the user will be prompted to enter a response until their response is "O" or "X"
